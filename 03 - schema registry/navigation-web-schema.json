@@ -1,0 +1,30 @@
+{
+    "schemaType": "JSON",
+    "schema":{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "navigationweb",
+    "type": "object",
+    "properties": {
+      "userId": {
+        "type": "integer"
+      },
+      "eventId": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "timestamp": {
+        "type": "long"
+      },
+
+      "duration": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "string"
+      }
+    },
+    "required": ["eventId", "userId", "url"]
+  }
+}
