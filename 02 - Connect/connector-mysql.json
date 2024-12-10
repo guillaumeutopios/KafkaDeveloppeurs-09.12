@@ -1,0 +1,15 @@
+{
+    "name": "jdbc-source-connector-mysql-1",
+    "config": {
+      "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+      "tasks.max": "1",
+      "connection.url": "jdbc:mysql://localhost:3306/database_name",
+      "connection.user": "user",
+      "connection.password": "password",
+      "table.whitelist": "your_table",
+      "mode": "incrementing",
+      "incrementing.column.name": "id",
+      "topic.prefix": "mysql-",
+      "poll.interval.ms": "1000"
+    }
+  }
