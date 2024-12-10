@@ -1,7 +1,7 @@
 ## Démo connecteur avec base de données JDBC.
 
 - Démarrer le docker compose dans le dossier kafka-docker-composer.
-- Vérifier que le connecteur est bien installer.
+- Vérifier que le connecteur est bien installé.
     - Normalement oui ils sont déjà dans le dossier volumes/connect-plugin-jars monté comme volume avec docker.
     - Dans le cadre ou ce n'est pas le cas, on peut installer le connecteur:
         - Soit manuellement, en téléchargeant le jar.
