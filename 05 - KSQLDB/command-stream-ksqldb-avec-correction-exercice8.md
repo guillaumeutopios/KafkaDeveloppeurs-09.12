@@ -9,15 +9,17 @@
 ```bash
 docker run -d \
 --name=ksqldb-server \
--v $PWD/extenstions:/etc/ksql/ext \
---network=kafka-docker-composer_default \
+--network=docker-compose_default \
 -e KSQL_LISTENERS=http://0.0.0.0:8088 \
--e KSQL_BOOTSTRAP_SERVERS=kafka-1:19091 \
--e KSQL_KSQL_SCHEMA_REGISTRY_URL=http://schema-registry:8081 \
+-e KSQL_BOOTSTRAP_SERVERS=http://kafka-1:19091 \
+-e KSQL_KSQL_SCHEMA_REGISTRY_URL=http://schema-registry-1:8081 \
 -e KSQL_KSQL_LOGGING_PROCESSING_STREAM_AUTO_CREATE='true' \
 -e KSQL_KSQL_LOGGING_PROCESSING_TOPIC_AUTO_CREATE='true' \
 -p 8088:8088 \
 confluentinc/cp-ksqldb-server:latest
+
+
+docker run -d --name=ksqldb-server --network=docker-compose_default -e KSQL_LISTENERS=http://0.0.0.0:8088 -e KSQL_BOOTSTRAP_SERVERS=http://kafka-1:19091 -e KSQL_KSQL_SCHEMA_REGISTRY_URL=http://schema-registry-1:8081 -e KSQL_KSQL_LOGGING_PROCESSING_STREAM_AUTO_CREATE='true' -e KSQL_KSQL_LOGGING_PROCESSING_TOPIC_AUTO_CREATE='true' -p 8088:8088 confluentinc/cp-ksqldb-server:latest
 ```
 
 ### pour avoir un client à l'interieur du conteneur du serveur ksqldb
